@@ -22,9 +22,6 @@
       max-width: 1000px;
       margin: 0 auto;
     }
-    .item {
-      position: relative;
-    }
     .item img {
       width: 100%;
       border-radius: 12px;
@@ -34,11 +31,6 @@
     }
     .item img:hover {
       transform: scale(1.05);
-    }
-    .caption {
-      margin-top: 8px;
-      font-size: 1rem;
-      color: #555;
     }
 
     /* モーダル拡大用 */
@@ -51,11 +43,19 @@
       background: rgba(0,0,0,0.8);
       justify-content: center;
       align-items: center;
+      flex-direction: column;
+      color: #fff;
+      padding: 20px;
     }
     .lightbox img {
       max-width: 90%;
-      max-height: 80%;
+      max-height: 70%;
       border-radius: 8px;
+      margin-bottom: 20px;
+    }
+    .lightbox .caption {
+      font-size: 1.1rem;
+      line-height: 1.6;
     }
     .lightbox:target {
       display: flex;
@@ -65,26 +65,39 @@
 <body>
   <h1>イラストギャラリー</h1>
   <div class="gallery">
-
     <div class="item">
       <a href="#img1"><img src="sample1.jpg" alt="イラスト1"></a>
-      <div class="caption">焼肉おねだりふっきー - ふっきー好き</div>
     </div>
     <div class="item">
       <a href="#img2"><img src="sample2.jpg" alt="イラスト2"></a>
-      <div class="caption">鈴本くん - 鈴本葉菜すき</div>
     </div>
     <div class="item">
       <a href="#img3"><img src="sample3.jpg" alt="イラスト3"></a>
-      <div class="caption">北原ゆうき - 北原ゆうき好き</div>
     </div>
-
   </div>
 
   <!-- 拡大表示（モーダル） -->
-  <div id="img1" class="lightbox" onclick="location.href='#'"><img src="sample1.jpg"></div>
-  <div id="img2" class="lightbox" onclick="location.href='#'"><img src="sample2.jpg"></div>
-  <div id="img3" class="lightbox" onclick="location.href='#'"><img src="sample3.jpg"></div>
+  <div id="img1" class="lightbox" onclick="location.href='#'">
+    <img src="sample1.jpg">
+    <div class="caption">
+      <strong>焼肉おねだりふっきー</strong><br>
+      ふっきー好き
+    </div>
+  </div>
+  <div id="img2" class="lightbox" onclick="location.href='#'">
+    <img src="sample2.jpg">
+    <div class="caption">
+      <strong>鈴本くん</strong><br>
+      鈴本葉菜すき
+    </div>
+  </div>
+  <div id="img3" class="lightbox" onclick="location.href='#'">
+    <img src="sample3.jpg">
+    <div class="caption">
+      <strong>北原ゆうき</strong><br>
+      北原ゆうき好き
+    </div>
+  </div>
 
   <p><a href="/">← トップページに戻る</a></p>
 </body>
